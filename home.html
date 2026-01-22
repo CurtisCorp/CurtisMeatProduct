@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Company Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-image: url("pigfarmbg.jpg"); /* 🔁 REPLACE with your provided picture */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 15px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-bar-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO */
+        .logo img {
+            height: 45px;
+            cursor: pointer;
+        }
+
+        /* SEARCH BAR */
+        .search-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar {
+            width: 420px;
+            background: #5a5a5a;
+            border-radius: 25px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 14px;
+        }
+
+        .search-bar input::placeholder {
+            color: #ddd;
+        }
+
+        .search-bar i {
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* RIGHT SECTION */
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 18px;
+            margin-right: 8px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff4d4d;
+        }
+
+        .contact-btn {
+            background: #ff4d4d;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #e63b3b;
+        }
+
+        /* LANGUAGE */
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            justify-content: flex-end;
+        }
+
+        .language button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .language i {
+            color: white;
+            font-size: 14px;
+        }
+
+        /* NAVIGATION */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 15px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .search-bar {
+                width: 280px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="top-bar-main">
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo" /> <!-- 🔁 Replace logo -->
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div>
+                <div class="right-section">
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+
+                    <a href="contact.html" class="contact-btn">Contact</a>
+                </div>
+
+                <div class="language">
+                    <i class="fas fa-globe"></i>
+                    <button onclick="changeLanguage()">Language</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="nav-menu">
+            <a href="#">Who We Are</a>
+            <a href="#">What We Do</a>
+            <a href="#">Who We Serve</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <script>
+        function changeLanguage() {
+            alert("Language selector clicked!");
+        }
+    </script>
+
+</body>
+</html>
